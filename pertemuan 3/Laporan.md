@@ -93,7 +93,7 @@ Jawab :
 ![alt text](assets/image-16.png)
 
 >Menghasilkan output :\
-![alt text](assets/image-13.png)
+![alt text](assets/image-13.png)\
 Loop akan mencetak nilai index dari 10 hingga 20, lalu berhenti karena break dieksekusi ketika index bernilai.
 
 # Tugas Praktikum
