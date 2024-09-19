@@ -26,11 +26,11 @@ Penjelasan singkatnya :
 >- Jika test bernilai "test2" (yang benar), maka akan mencetak "Test2 again".
 
 ### Langkah 3
-Tambahkan kode program berikut, lalu coba eksekusi (Run) kode anda.
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode anda.\
 ![alt text](assets/image-4.png)\
 Apa yang terjadi? Jika terjadi error, silahkan perbaiki namun tetap menggunakan if/else.\
 Jawab :
->![alt text](assets/image-3.png)
+>![alt text](assets/image-3.png)\
 Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false). \
 Versi benarnya sebagai berikut : 
 ![alt text](assets/image-5.png) \
