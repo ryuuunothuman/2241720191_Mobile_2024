@@ -11,7 +11,6 @@ Ketik atau salin kode program berikut ke dalam fungsi main().
 Silakan coba eksekusi(Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan!
 >Jawab : \
 Yang terjadi adalah error, karena penulisan kode pada 'else If' salah dan begitu juga pada kode 'Else' yang seharusnya benar adalah 'else if' dan 'else' lebih tepatnya tidak ada huruf kapital. 
-![alt text](<Screenshot 2024-09-18 211350.png>)
 Dibawah ini versi benarnya : \
 ![alt text](assets/image-1.png)
 Output : \
@@ -28,8 +27,8 @@ Penjelasan singkatnya :
 
 ### Langkah 3
 Tambahkan kode program berikut, lalu coba eksekusi (Run) kode anda.
-![alt text](assets/image-4.png) \
-Apa yang terjadi? Jika terjadi error, silahkan perbaiki namum tetap menggunakan if/else. \
+![alt text](assets/image-4.png)\
+Apa yang terjadi? Jika terjadi error, silahkan perbaiki namun tetap menggunakan if/else.\
 Jawab :
 >![alt text](assets/image-3.png)
 Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false). \
@@ -60,8 +59,8 @@ Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
 ![alt text](assets/image-10.png)
 Apa yang terjadi? Jika terjadi error, silakan perbaiki namun tetap menggunakan *do-while*. \
 Jawab :
->![alt text](assets/image-11.png)
- Yang terjadi adalah loop do-while kedua akan mencetak nilai counter dari 33 hingga 77.
+>Yang terjadi adalah loop do-while kedua akan mencetak nilai counter dari 33 hingga 77.
+![alt text](assets/image-11.png)
 
 # Praktikum 3 : Menerapkan Perulangan "for" dan "break-continue"
 Selesaikan langkah-langkah praktikum berikut ini menggunakan DarPad di browser Anda.
@@ -87,7 +86,7 @@ Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan 
 Jawab :
 > Yang terjadi adalah error, karena penulisan variabel pada "if" dan "else if" umumnya menggunakan huruf kecil di awal. Dalam kode diatas break dan continue digunakan tanpa blok {}, sehingga ini bisa menyebabkan masalah.
 
->Perbaikan kode yang benar :
+> Perbaikan kode yang benar :
 ![alt text](assets/image-16.png)
 Menghasilkan output :
 ![alt text](assets/image-13.png)
