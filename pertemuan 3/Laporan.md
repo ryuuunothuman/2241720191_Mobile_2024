@@ -32,9 +32,11 @@ Apa yang terjadi? Jika terjadi error, silahkan perbaiki namun tetap menggunakan 
 Jawab :
 >![alt text](assets/image-3.png)\
 Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false).\
-Versi benarnya sebagai berikut : 
-![alt text](assets/image-5.png)\ 
-Menghasilkan Output :\
+Versi benarnya sebagai berikut :
+
+![alt text](assets/image-5.png) 
+Menghasilkan Output :
+
 ![alt text](assets/image-6.png)
 
 # Praktikum 2: Menerapkan Perulangan "while" dan "do-while"
