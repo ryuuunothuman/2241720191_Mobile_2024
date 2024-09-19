@@ -33,7 +33,7 @@ Jawab :
 >![alt text](assets/image-3.png)\
 Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false).
 
->Versi benarnya sebagai berikut :
+>Versi benarnya sebagai berikut :\
 ![alt text](assets/image-5.png)
 
 >Menghasilkan Output :\
@@ -76,13 +76,14 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 Jawab :
 > Yang terjadi adalah error, karena variabel index tidak dideklarasikan, selain itu penamaan variabel pada di Dart umumnya menggunakan huruf kecil di awal, jadi sebaiknya di tulis "index". Pada bagian for yaitu bagian increment (index++) tidak ada ekspresi yang menambah nilai index, sehingga loop akan berjalan tanpa batas karena index tidak pernah berubah.
 
->Perbaikan pada kode :
+>Perbaikan pada kode :\
 ![alt text](assets/ok.png)
-Menghasilkan Output :
+
+>Menghasilkan Output :\
 ![alt text](assets/image-14.png)
 
 ### Langkah 3
-Tambahkan kode program berikut di dalam *for-loop*, lalu coba eksekusi (Run) kode Anda.
+Tambahkan kode program berikut di dalam *for-loop*, lalu coba eksekusi (Run) kode Anda.\
 ![alt text](assets/image-15.png)
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue. \
 Jawab :
