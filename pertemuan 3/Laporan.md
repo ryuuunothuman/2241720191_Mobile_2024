@@ -34,7 +34,8 @@ Jawab :
 Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false).\
 Versi benarnya sebagai berikut :
 
-![alt text](assets/image-5.png) 
+![alt text](assets/image-5.png)
+ 
 Menghasilkan Output :
 
 ![alt text](assets/image-6.png)
