@@ -83,15 +83,16 @@ Jawab :
 ![alt text](assets/image-14.png)
 
 ### Langkah 3
-Tambahkan kode program berikut di dalam *for-loop*, lalu coba eksekusi (Run) kode Anda.\
-![alt text](assets/image-15.png)
+Tambahkan kode program berikut di dalam *for-loop*, lalu coba eksekusi (Run) kode Anda.
+![alt text](assets/image-15.png)\
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue. \
 Jawab :
 > Yang terjadi adalah error, karena penulisan variabel pada "if" dan "else if" umumnya menggunakan huruf kecil di awal. Dalam kode diatas break dan continue digunakan tanpa blok {}, sehingga ini bisa menyebabkan masalah.
 
-> Perbaikan kode yang benar :
+> Perbaikan kode yang benar :\
 ![alt text](assets/image-16.png)
-Menghasilkan output :
+
+>Menghasilkan output :\
 ![alt text](assets/image-13.png)
 Loop akan mencetak nilai index dari 10 hingga 20, lalu berhenti karena break dieksekusi ketika index bernilai.
 
