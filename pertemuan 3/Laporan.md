@@ -31,13 +31,12 @@ Tambahkan kode program berikut, lalu coba eksekusi (Run) kode anda.\
 Apa yang terjadi? Jika terjadi error, silahkan perbaiki namun tetap menggunakan if/else.\
 Jawab :
 >![alt text](assets/image-3.png)\
-Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false).\
-Versi benarnya sebagai berikut :
+Yang terjadi adalah error. Karena variabel test bertipe string sedangkan pada kondisi if, harus menggunakan nilai boolean (true atau false).
 
+>Versi benarnya sebagai berikut :
 ![alt text](assets/image-5.png)
- 
-Menghasilkan Output :
 
+>Menghasilkan Output :\
 ![alt text](assets/image-6.png)
 
 # Praktikum 2: Menerapkan Perulangan "while" dan "do-while"
