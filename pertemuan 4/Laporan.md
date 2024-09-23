@@ -79,7 +79,7 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 
 ### Langkah 3
 Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
-![alt text](assets/code8.png)
+![alt text](assets/code8.png)\
 Apa yang terjadi? Jika terjadi error, silakan perbaiki.
 >Jawab :
 Tidak terjadi error secara sintaksis, tetapi ada beberapa hal yang perlu diperbaiki. Berikut adalah penjelasannya :
