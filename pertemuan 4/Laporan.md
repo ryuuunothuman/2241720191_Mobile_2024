@@ -23,7 +23,8 @@ Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
 >Jawab :\
 ![alt text](assets/code2.png)\
 Yang terjadi adalah eror, karena mencoba menetapkan nilai bertipe string ke sebuah elemen dari list yang diharapkan bertipe int?.\
-Berikut adalah perbaikan kode :
+
+>Berikut adalah perbaikan kode :\
 ![alt text](assets/code3.png)
 
 >Output :\
