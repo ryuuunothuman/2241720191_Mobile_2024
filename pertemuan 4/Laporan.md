@@ -26,5 +26,5 @@ Yang terjadi adalah eror, karena mencoba menetapkan nilai bertipe string ke sebu
 Berikut adalah perbaikan kode :
 ![alt text](assets/code3.png)
 
->Output :
+>Output :\
 ![alt text](assets/image2.png)
