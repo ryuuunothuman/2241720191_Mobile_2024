@@ -54,5 +54,5 @@ Deklarasi yang sama seperti names1, tetapi menggunakan bentuk tipe eksplisit Set
 >Berikut adalah perbaikan kode sesuai tugas yang diminta :\
 ![alt text](assets/code6.png)
 
->Output :
+>Output :\
 ![alt text](assets/image4.png)
