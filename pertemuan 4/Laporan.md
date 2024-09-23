@@ -30,7 +30,7 @@ Yang terjadi adalah eror, karena mencoba menetapkan nilai bertipe string ke sebu
 >Output :\
 ![alt text](assets/image2.png)
 
-# Praktikum 2
+# Praktikum 2 : Eksperimen Tipe Data Set
 ### Langkah 1
 Ketik atau salin kode berikut ke dalam fungsi main().\
 ![alt text](assets/code4.png)
@@ -56,3 +56,40 @@ Deklarasi yang sama seperti names1, tetapi menggunakan bentuk tipe eksplisit Set
 
 >Output :\
 ![alt text](assets/image4.png)
+
+# Praktikum 3 : Eksperimen Tipe Data Maps
+### Langkah 1 :
+Ketik atau salin kode program berikut ke dalam fungsi main().\
+![alt text](assets/code7.png)
+### Langkah 2 :
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+>Jawab :\
+>1. var gifts = { ... };: Ini mendefinisikan sebuah Map bernama gifts yang berisi pasangan key-value:
+>- 'first' sebagai key dengan nilai 'partridge'
+>- 'second' sebagai key dengan nilai 'turtledoves'
+>- 'fifth' sebagai key dengan nilai 1 (tipe integer)
+>2. var nobleGases = { ... };: Ini mendefinisikan sebuah Map bernama nobleGases yang juga berisi pasangan key-value:
+>- 2 sebagai key dengan nilai 'helium'
+>- 10 sebagai key dengan nilai 'neon'
+>- 18 sebagai key dengan nilai 2 (tipe integer)
+>3. print(gifts); dan print(nobleGases);: Mencetak isi dari kedua map. Hasilnya adalah representasi string dari map yang berisi pasangan key-value.
+
+>Output :\
+![alt text](assets/image5.png)
+
+### Langkah 3
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
+![alt text](assets/code8.png)
+Apa yang terjadi? Jika terjadi error, silakan perbaiki.
+>Jawab :
+Tidak terjadi error secara sintaksis, tetapi ada beberapa hal yang perlu diperbaiki. Berikut adalah penjelasannya :
+>1. gifts : Didefinisikan sebagai sebuah Map dengan key bertipe String dan value bertipe campuran (String dan int). Kemudian, pada bagian setelahnya mengubah nilai dari key 'fifth' menjadi 'golden rings', yang juga valid.
+>2. nobleGases : Didefinisikan sebagai sebuah Map dengan key bertipe int dan value bertipe campuran (String dan int). Kemudian mengubah nilai key 18 menjadi 'argon'.
+>3. mhs1 : Dideklarasikan sebagai Map dengan key dan value bertipe String, tetapi saat ini kosong.
+>4. mhs2 : Dideklarasikan sebagai Map dengan key bertipe int dan value bertipe String, tetapi saat ini kosong.
+
+> Berikut adalah perbaikan kode sesuai tugas yang diminta :\
+![alt text](assets/code9.png)
+
+> Output :\
+![alt text](assets/image6.png)
