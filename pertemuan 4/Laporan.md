@@ -108,7 +108,7 @@ Terdapat beberapa masalah pada kode diatas :
 > Perbaikan kode yang benar :\
 ![alt text](assets/code11.png)
 
-> Output :
+> Output :\
 ![alt text](assets/image7.png)
 
 ### Langkah 3
@@ -125,7 +125,7 @@ Terdapat masalah yang perlu diperhatikan :
 > Berikut adalah kode yang diperbaiki :\
 ![alt text](assets/code13.png)
 
-> Output :
+> Output :\
 ![alt text](assets/image8.png)
 
 ### Langkah 4
