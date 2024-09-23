@@ -145,3 +145,40 @@ nav akan berisi ['Home', 'Furniture', 'Plants', 'Outlet'].
 > Output ketika promoActive False :\
 ![alt text](assets/image10.png)\
 nav akan berisi  ['Home', 'Furniture', 'Plants'].
+
+### Langkah 5
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
+![alt text](assets/code16.png)
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel login mempunyai kondisi lain.
+>Jawab :\
+Terjadi error pada kode diatas, karena login belum dideklarasikan dalam kode.
+
+> Berikut adalah kode yang sudah diperbaiki sesuai tugas :\
+![alt text](assets/code17.png)
+
+> Output jika login adalah 'Manager':\
+![alt text](assets/image11.png)\
+List nav2 akan berisi ['Home', 'Furniture', 'Plants', 'Inventory'].
+ 
+> Output jika login adalah kondisi lain, misalnya 'Staff' :\
+![alt text](assets/image12.png)\
+List nav2 akan berisi: ['Home', 'Furniture', 'Plants'].
+
+### Langkah 6
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
+![alt text](assets/code18.png)
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Jelaskan manfaat Collection For dan dokumentasikan hasilnya.
+> Jawab :
+Terjadi Error: Pada baris var listofString = ['#0', for (var i in listofInts) '#i'];, variabel i seharusnya digunakan di dalam string interpolation (#${i}) untuk mencetak nilai dari variabel i.
+
+> Berikut adalah perbaikan kode sesusai tugas :\
+![alt text](assets/code19.png)
+
+> Output :\
+![alt text](assets/image13.png)
+
+> Manfaat Collection For:
+>- Collection for di Dart berguna untuk membentuk list (atau set map) dengan lebih dinamis. Dan juga bisa membuat elemen-elemen baru dalam list berdasarkan hasil iterasi atau kondisi tertentu
+>- Kelebihan :
+>1. Mengurangi boilerplate kode dengan menggabungkan operasi loop dalam satu ekspresi.
+>2. Membuat kode lebih bersih dan mudah dibaca.

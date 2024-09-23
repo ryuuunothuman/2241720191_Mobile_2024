@@ -17,8 +17,17 @@ void main() {
   print(listnim);
   print(listnim.length);
 
-  bool promoActive = false; // Deklarasi promoActive
+  bool promoActive = true; // Deklarasi promoActive
   var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
   print(nav);
+
+  var login = 'Manager'; // Deklarasi login
+  var nav2 = ['Home', 'Furniture', 'Plants', if (login case 'Manager') 'Inventory'];
+  print(nav2);
+
+  var listofInts = [1, 2, 3];
+  var listofString = ['#0', for (var i in listofInts) '#${i}']; // String interpolation
+  assert(listofString[1] == '#1');
+  print(listofString);
 }
 
