@@ -55,4 +55,4 @@ Deklarasi yang sama seperti names1, tetapi menggunakan bentuk tipe eksplisit Set
 ![alt text](assets/code6.png)
 
 >Output :
-![alt text](assets/image4.pngimage4.png)
+![alt text](assets/image4.png)
