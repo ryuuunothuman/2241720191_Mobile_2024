@@ -1,12 +1,12 @@
 # Praktikum 1 : Eksperimen Tipe Data List
 ### Langkah 1
-Ketik atau salin kode program berikut ke dalam void main().
+Ketik atau salin kode program berikut ke dalam void main().\
 ![alt text](assets/code.png)
 ### Langkah 2
 Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan!\
 Jawab :
 > Yang terjadi menghasilkan output dibawah ini :
-![alt text](assets/image.png)
+![alt text](assets/image.png)\
 Penjelasan singkat mengenai kode diatas :
 >- Membuat sebuah list dengan elemen [1, 2, 3] 
 >- Mengecek apakah panjang list sama dengan 3. Jika benar, program berjalan, jika tidak program akan berhenti.
@@ -21,9 +21,10 @@ Ubah kode pada langkah 1 menjadi variabel final yang mempunyai index = 5 dengan 
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
 >Jawab :
-![alt text](assets/code2.png)
+![alt text](assets/code2.png)\
 Yang terjadi adalah eror, karena mencoba menetapkan nilai bertipe string ke sebuah elemen dari list yang diharapkan bertipe int?.\
 Berikut adalah perbaikan kode :
 ![alt text](assets/code3.png)
-Output :
+
+>Output :
 ![alt text](assets/image2.png)
