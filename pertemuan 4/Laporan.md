@@ -20,7 +20,7 @@ Penjelasan singkat mengenai kode diatas :
 Ubah kode pada langkah 1 menjadi variabel final yang mempunyai index = 5 dengan default value = null. Isilah nama dan NIM Anda pada elemen index ke-1 dan ke-2. Lalu print dan capture hasilnya.
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
->Jawab :
+>Jawab :\
 ![alt text](assets/code2.png)\
 Yang terjadi adalah eror, karena mencoba menetapkan nilai bertipe string ke sebuah elemen dari list yang diharapkan bertipe int?.\
 Berikut adalah perbaikan kode :
