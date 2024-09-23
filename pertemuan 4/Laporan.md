@@ -93,3 +93,55 @@ Tidak terjadi error secara sintaksis, tetapi ada beberapa hal yang perlu diperba
 
 > Output :\
 ![alt text](assets/image6.png)
+
+# Praktikum 4 : Eksperimen Tipe Data List: Spread dan Control-flow Operators
+### Langkah 1:
+Ketik atau salin kode program berikut ke dalam fungsi main().\
+![alt text](assets/code10.png)
+### Langkah 2 :
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+>Jawab :\
+Terdapat beberapa masalah pada kode diatas :
+>- Error pada print(list1) : Tidak ada variabel yang disebut list1. Sebagai gantinya, seharusnya mencetak list atau mengganti list1 menjadi list.
+>- Penggunaan spread operator: Penggunaan ...list di dalam list2 sudah benar. Berfungsi untuk menambahkan semua elemen dari list ke dalam list2.
+
+> Perbaikan kode yang benar :\
+![alt text](assets/code11.png)
+
+> Output :
+![alt text](assets/image7.png)
+
+### Langkah 3
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
+![alt text](assets/code12.png)
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+
+Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
+>Jawab :\
+Terdapat masalah yang perlu diperhatikan :
+>1. Error pada list1 = [1, 2, null]; : Ini akan menyebabkan error karena list1 belum dideklarasikan. Kamu harus mendeklarasikan list1 terlebih dahulu.
+>2. ...?list1 : Ini adalah penggunaan null-aware spread operator. Jika list1 bernilai null, maka list3 tidak akan menambahkan elemen dari list1. Namun, jika list1 sudah dideklarasikan dan bukan null, maka akan berfungsi dengan baik.
+
+> Berikut adalah kode yang diperbaiki :\
+![alt text](assets/code13.png)
+
+> Output :
+![alt text](assets/image8.png)
+
+### Langkah 4
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.\
+![alt text](assets/code14.png)\
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel promoActive ketika true dan false.
+>Jawab :
+Tidak ada error sintaksis, tetapi perlu ada deklarasi untuk variabel promoActive agar dapat digunakan dalam ekspresi conditional.
+
+> Berikut adalah kode yang sudah diperbaiki sesuai tugas :\
+![alt text](assets/code15.png)
+
+> Output ketika promoActive True :\
+![alt text](assets/image9.png)\
+nav akan berisi ['Home', 'Furniture', 'Plants', 'Outlet'].
+
+> Output ketika promoActive False :\
+![alt text](assets/image10.png)\
+nav akan berisi  ['Home', 'Furniture', 'Plants'].
