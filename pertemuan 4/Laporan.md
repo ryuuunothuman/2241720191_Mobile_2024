@@ -182,3 +182,196 @@ Terjadi Error: Pada baris var listofString = ['#0', for (var i in listofInts) '#
 >- Kelebihan :
 >1. Mengurangi boilerplate kode dengan menggabungkan operasi loop dalam satu ekspresi.
 >2. Membuat kode lebih bersih dan mudah dibaca.
+
+# Praktikum 5 : Eksperimen Tipe Data Records
+### Langkah 1
+Ketik atau salin kode program berikut ke dalam fungsi main().
+```dart
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
+}
+```
+### Langkah 2 
+Silahkan coba eksekusi (Run) pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+> Jawab :\
+Pada kode program diatas menghasilkan output sebagai berikut :\
+![alt text](assets/image.png)\
+Penjelasan :
+>- 'first' dan 'last' adalah positional fields, jadi mereka muncul di awal dalam urutan yang diberikan.
+>- a: 2 dan b: true adalah named fields, yang ditampilkan setelah positional fields.
+### Langkah 3
+Tambahkan kode program berikut di luar scope void main(), lalu coba eksekusi (Run) kode Anda.
+```dart
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
+}
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+```
+>Jawab :\
+Yang terjadi adalah output tidak mengalami error
+```
+ (first, last, a: 2, b: true) 
+```
+**Berikut adalah perbaikan kode sesuai tugas:**
+```dart
+main() {
+  var record = {'first': 'first', 'a': 2, 'b': true, 'last': 'last'};
+  print('before move: $record');
+
+  var result = move(record);
+  print('after move: $result');
+}
+
+Map<String, dynamic> move(Map<String, dynamic> record) {
+  var temp = record['a'];
+  record['a'] = record['b'];
+  record['b'] = temp;
+
+  return record;
+}
+```
+**Output:**
+```
+before move: {first: first, a: 2, b: true, last: last}
+after move: {first: first, a: true, b: 2, last: last}
+```
+### Langkah 4
+Tambahkan kode program berikut di dalam scope void main(), lalu coba eksekusi (Run) kode Anda.
+```dart
+main() {
+  // Record type annotation in a variable declaration:
+  (String, int) mahasiswa;
+  print(mahasiswa);
+  var record = {'first': 'first', 'a': 2, 'b': true, 'last': 'last'};
+  print('before move: $record');
+
+  var result = move(record);
+  print('after move: $result');
+}
+
+Map<String, dynamic> move(Map<String, dynamic> record) {
+  var temp = record['a'];
+  record['a'] = record['b'];
+  record['b'] = temp;
+
+  return record;
+}
+```
+>Jawab :
+Yang terjadi error karena pada 'mahasiswa' belum dideklarasikan sebuah ```Record (String, int)```.
+
+**Berikut adalah perbaikan kode sesuai tugas:**
+```dart
+main() {
+  // Record type annotation in a variable declaration:
+  (String, int) mahasiswa = ('Cahyo Adi Prasetia', 2241720191);
+  print(mahasiswa);
+  var record = {'first': 'first', 'a': 2, 'b': true, 'last': 'last'};
+  print('before move: $record');
+
+  var result = move(record);
+  print('after move: $result');
+}
+
+Map<String, dynamic> move(Map<String, dynamic> record) {
+  var temp = record['a'];
+  record['a'] = record['b'];
+  record['b'] = temp;
+
+  return record;
+}
+```
+**Output**
+```
+(Cahyo Adi Prasetia, 2241720191)
+before move: {first: first, a: 2, b: true, last: last}
+after move: {first: first, a: true, b: 2, last: last}
+```
+### Langkah 5
+Tambahkan kode program berikut di dalam scope void main(), lalu coba eksekusi (Run) kode Anda.
+```dart
+main() {
+  var mahasiswa2 = ('first', a: 2, b: true, 'last');
+
+  print(mahasiswa2.$1); // Prints 'first'
+  print(mahasiswa2.a); // Prints 2
+  print(mahasiswa2.b); // Prints true
+  print(mahasiswa2.$2); // Prints 'last'
+  
+  // Record type annotation in a variable declaration:
+  (String, int) mahasiswa = ('Cahyo Adi Prasetia', 2241720191);
+  print(mahasiswa);
+  var record = {'first': 'first', 'a': 2, 'b': true, 'last': 'last'};
+  print('before move: $record');
+
+  var result = move(record);
+  print('after move: $result');
+}
+
+Map<String, dynamic> move(Map<String, dynamic> record) {
+  var temp = record['a'];
+  record['a'] = record['b'];
+  record['b'] = temp;
+
+  return record;
+}
+```
+>Jawab :\
+**Output**
+```
+first
+2
+true
+last
+(Cahyo Adi Prasetia, 2241720191)
+before move: {first: first, a: 2, b: true, last: last}
+after move: {first: first, a: true, b: 2, last: last}
+```
+**Menambahkan isi record dengan NAMA dan NIM**
+```dart
+main() {
+  var mahasiswa2 = ('first', 'Cahyo Adi Prasetia', '2241720191', b: true, 'last');
+
+  print(mahasiswa2.$1); // Prints 'first'
+  print(mahasiswa2.$2); // Prints NAMA
+  print(mahasiswa2.$3); // Prints NIM
+  print(mahasiswa2.b); // Prints true
+  print(mahasiswa2.$4); // Prints 'last'
+
+  // Record type annotation in a variable declaration:
+  (String, int) mahasiswa = ('Cahyo Adi Prasetia', 2241720191);
+  print(mahasiswa);
+  var record = {'first': 'first', 'a': 2, 'b': true, 'last': 'last'};
+  print('before move: $record');
+
+  var result = move(record);
+  print('after move: $result');
+}
+
+Map<String, dynamic> move(Map<String, dynamic> record) {
+  var temp = record['a'];
+  record['a'] = record['b'];
+  record['b'] = temp;
+
+  return record;
+}
+```
+**Output**
+```
+first
+Cahyo Adi Prasetia
+2241720191
+true
+last
+(Cahyo Adi Prasetia, 2241720191)
+before move: {first: first, a: 2, b: true, last: last}
+after move: {first: first, a: true, b: 2, last: last}
+```
+>Penjelasan sedikit:
+>- Jika menggunakan positional fields, anda mengakses dengan $1, $2, dan seterusnya.
+>- Jika menggunakan name fields, Anda mengaksesnya dengan nama field yang ditetapkan.
