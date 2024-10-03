@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 
 #### 1. Membuat Project Baru
-> ![alt text](images/image.png)
+> ![alt text](../images/image.png)
 
 ```dart
 pubspec.yaml
@@ -71,14 +71,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  #   - ../images/a_dot_burr.jpeg
+  #   - ../images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
+  # https://flutter.dev/assets-and-../images/#resolution-aware
 
   # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
+  # https://flutter.dev/assets-and-../images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
@@ -189,7 +189,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 > Output pada main.dart:\
-![alt text](images/image-1.png)
+![alt text](../images/image-1.png)
 
 #### 2. Menambahkan Tombol
 ```dart
@@ -249,7 +249,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 > Output pada main.dart:\
-![alt text](images/image-2.png)
+![alt text](../images/image-2.png)
 
 ```dart
 add metode getNext
@@ -268,7 +268,7 @@ add metode getNext
           ),
 ```
 > Output:\
-![alt text](images/image-3.png)
+![alt text](../images/image-3.png)
 
 #### 3. Memperindah tampilan aplikasi
 ```dart
@@ -311,7 +311,7 @@ menambahkan kartu
   }
 ```
 >Output:\
-![alt text](images/image-4.png)
+![alt text](../images/image-4.png)
 ```dart
 tema dan gaya
 
@@ -329,7 +329,7 @@ tema dan gaya
   }
 ```
 > Output:\
-![alt text](images/image-5.png) 
+![alt text](../images/image-5.png) 
 
 ```dart
 textTheme
@@ -352,7 +352,7 @@ textTheme
   }
 ```
 > Output :\
-![alt text](images/image-6.png)
+![alt text](../images/image-6.png)
 
 ```dart
 Meningkatkan aksebilitas
@@ -380,7 +380,7 @@ Meningkatkan aksebilitas
   }
 ```
 > Output:\
-![alt text](images/image-7.png)
+![alt text](../images/image-7.png)
 
 ```dart
 Menempatkan UI di tengah
@@ -412,7 +412,7 @@ class MyHomePage extends StatelessWidget {
   }
 ```
 > Output :\
-![alt text](images/image-8.png)
+![alt text](../images/image-8.png)
 
 ```dart
 Menghapus Widget Text
