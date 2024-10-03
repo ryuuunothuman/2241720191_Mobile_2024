@@ -269,3 +269,391 @@ add metode getNext
 ```
 > Output:\
 ![alt text](images/image-3.png)
+
+#### 3. Memperindah tampilan aplikasi
+```dart
+mengekstrak widget
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('A random AWESOME idea:'),
+          BigCard(pair: pair),
+
+          ElevatedButton(
+            onPressed: () {
+              appState.getNext();
+            },
+            child: Text('Next'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+```dart
+menambahkan kartu
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(pair.asLowerCase),
+      ),
+    );
+  }
+```
+>Output:\
+![alt text](images/image-4.png)
+```dart
+tema dan gaya
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(pair.asLowerCase),
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](images/image-5.png) 
+
+```dart
+textTheme
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onSurface,
+    );
+
+    return Card(
+      color: theme.colorScheme.secondary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+```
+> Output :\
+![alt text](images/image-6.png)
+
+```dart
+Meningkatkan aksebilitas
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onSurface,
+    );
+
+    return Card(
+      color: theme.colorScheme.secondary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+
+        child: Text(
+          pair.asLowerCase, 
+          style: style,
+          semanticsLabel: "${pair.first} ${pair.second}",
+        ),
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](images/image-7.png)
+
+```dart
+Menempatkan UI di tengah
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('A random AWESOME idea:'),
+            BigCard(pair: pair),
+        
+            ElevatedButton(
+              onPressed: () {
+                appState.getNext();
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+```
+> Output :\
+![alt text](images/image-8.png)
+
+```dart
+Menghapus Widget Text
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BigCard(pair: pair),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                appState.getNext();
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](../images/image-9.png)
+
+#### 4. Menambahkan Fungsi
+```dart
+Menambahkan Logika Bisnis
+
+    var favorites = <WordPair>[];
+
+    void toogleFavorite(){
+      if (favorites.contains(current)){
+        favorites.remove(current);
+      } else {
+        favorites.add(current);
+      }
+      notifyListeners();
+    }
+```
+```dart
+Menambahkan Tombol
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BigCard(pair: pair),
+            SizedBox(height: 10),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: (){
+                    appState.toogleFavorite();
+                  },
+                  icon: Icon(Icons.favorite),
+                  label: Text('Like'),
+                ),
+                SizedBox(width: 10),
+                
+                ElevatedButton(
+                  onPressed: () {
+                    appState.getNext();
+                  },
+                  child: Text('Next'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](../images/image-10.png)
+
+#### 5. Menambahkan kolom samping navigasi
+```dart
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home), 
+                  label: Text('Home'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.favorite), 
+                    label: Text('Favorites'),
+                  ),
+              ],
+              selectedIndex: 0,
+              onDestinationSelected: (value){
+                print('selected: $value');
+              },
+            ) 
+          ),
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: GeneratorPage(),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class GeneratorPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BigCard(pair: pair),
+          SizedBox(height: 10),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  appState.toogleFavorite();
+                },
+                icon: Icon(icon),
+                label: Text('Like'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  appState.getNext();
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](../images/image-11.png)
+
+```dart
+Widget stateless vs stateful
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  var selectedIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home), 
+                  label: Text('Home'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.favorite), 
+                    label: Text('Favorites'),
+                  ),
+              ],
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (value){
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ) 
+          ),
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: GeneratorPage(),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+```
+> Output:\
+![alt text](../images/image-12.png)
+```dart
+Menggunakan selectedIndex
+
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = GeneratorPage();
+        break;
+      case 1:
+        page = Placeholder();
+        break;
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+```
+> Output:\
+![alt text](../images/image-13.png)
