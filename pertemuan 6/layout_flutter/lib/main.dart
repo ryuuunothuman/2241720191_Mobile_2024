@@ -58,10 +58,12 @@ class MyApp extends StatelessWidget {
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
-        'Gunung Penanggungan atau yang dikenal juga dengan nama Gunung Pawitra memiliki ketinggian 1.653 mdpl.'
+        'Gunung Penanggungan atau yang dikenal juga dengan nama Gunung Pawitra memiliki ketinggian 1.653 mdpl.\t'
         'Penanggungan merupakan gunung berapi kerucut dalam kondisi istirahat yang berada di Jawa Timur, Indonesia.'
-        'Posisinya berada di perbatasan dua kabupaten, yaitu Kabupaten Mojokerto (sisi barat) dan Kabupaten Pasuruan (sisi timur)' 
-        'dan berjarak kurang lebih 55 km sebelah selatan kota Surabaya.',
+        '\tPosisinya berada di perbatasan dua kabupaten, yaitu Kabupaten Mojokerto (sisi barat) dan Kabupaten Pasuruan (sisi timur)\t' 
+        'dan berjarak kurang lebih 55 km sebelah selatan kota Surabaya.\n'
+        'Cahyo Adi Prasetia\t2241720191\n'
+        'Happy Trip!🙂.',
         softWrap: true,
         textAlign: TextAlign.justify,
       ),
