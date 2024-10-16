@@ -1,9 +1,9 @@
 # Praktikum Menerapkan Plugin di Project Flutter
 
 ### Langkah 1: Buat Project Baru
-![alt text](/images/image.png)
+![alt text](../images/image.png)
 ### Langkah 2: Menambahkan Plugin
-![alt text](/images/image-2.png)
+![alt text](../images/image-2.png)
 ### Langkah 3: Buat file ```red_text_widget.dart```
 ```dart
 import 'package:flutter/material.dart';
@@ -62,4 +62,4 @@ children: <Widget>[
             ),
 ```
 > Output:\
-![alt text](/images/image-3.png)
+![alt text](../images/image-3.png)
