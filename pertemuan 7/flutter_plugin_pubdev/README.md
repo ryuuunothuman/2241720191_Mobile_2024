@@ -83,14 +83,14 @@ a. **Container 1(RedTextWidget):**\
 b. **Container 2(RedTextWidget):**\
 ```color: Colors.greenAccent:``` Memberikan warna latar belakang hijau pada container.\
 ```width: 100:``` Mengatur lebar container menjadi 100 piksel.\
-```Text:``` Menggunakan widget bawaan Flutter, yaitu Text, untuk menampilkan teks yang sama.
+```Text:``` Menggunakan widget bawaan Flutter, yaitu Text, untuk menampilkan teks yang sama.\
 **Perbedaan:**\
 a. Widget yang digunakan:\
 **Container 1** menggunakan custom widget RedTextWidget.\
-**Container 2** menggunakan widget bawaan Flutter, yaitu Text.
+**Container 2** menggunakan widget bawaan Flutter, yaitu Text.\
 b. Lebar Container:\
 **Container 1** memiliki lebar 50 piksel.\
-**Container 2** memiliki lebar 100 piksel, sehingga lebih lebar dibanding container pertama.
+**Container 2** memiliki lebar 100 piksel, sehingga lebih lebar dibanding container pertama.\
 c. Warna Latar Belakang:\
 **Container 1** memiliki warna latar belakang kuning.\
 **Container 2** memiliki warna latar belakang hijau.\
