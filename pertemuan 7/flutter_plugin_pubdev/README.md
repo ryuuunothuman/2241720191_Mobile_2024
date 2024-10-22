@@ -95,3 +95,91 @@ c. Warna Latar Belakang:\
 **Container 1** memiliki warna latar belakang kuning.\
 **Container 2** memiliki warna latar belakang hijau.\
 Dari segi fungsionalitas, keduanya menampilkan teks yang sama, tetapi perbedaannya terletak pada penggunaan widget custom dan properti visual seperti ukuran dan warna.
+
+5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text!\
+Jawab :<table>
+    <thead>
+        <tr>
+            <td>Parameter</td>
+            <td>Deskripsi</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>key</td>
+            <td>Mengontrol bagaimana satu widget menggantikan widget lain di tree.</td>
+        </tr>
+        <tr>
+            <td>textKey</td>
+            <td>Mengatur kunci untuk widget Teks yang dihasilkan.</td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td>Melakukan manipulasi pada text.</td>
+        </tr>
+        <tr>
+            <td>minFontSize</td>
+            <td>Batasan ukuran teks minimum yang akan digunakan saat mengubah ukuran teks secara otomatis. Diabaikan jika presetFontSizes diatur.</td>
+        </tr>
+        <tr>
+            <td>maxFontSize</td>
+            <td>The maximum text size constraint to be used when auto-sizing text. Is being ignored if presetFontSizes is set.</td>
+        </tr>
+        <tr>
+            <td>stepGranularity</td>
+            <td>The step size in which the font size is being adapted to constraints.</td>
+        </tr>
+        <tr>
+            <td>presetFontSizes</td>
+            <td>Mendefinisikan semua ukuran font yang mungkin. Penting: presetFontSizes harus dalam urutan menurun.</td>
+        </tr>
+        <tr>
+            <td>group</td>
+            <td>Menyinkronkan ukuran beberapa AutoSizeText</td>
+        </tr>
+        <tr>
+            <td>textAlign</td>
+            <td>Bagaimana teks harus disejajarkan secara horizontal.</td>
+        </tr>
+        <tr>
+            <td>textDirection</td>
+            <td>Arah teks. Ini menentukan bagaimana nilai textAlign seperti TextAlign.start dan TextAlign.end.</td>
+        </tr>
+        <tr>
+            <td>locale</td>
+            <td>Digunakan untuk memilih font ketika karakter Unicode yang sama dapat dirender secara berbeda, tergantung pada lokasi.</td>
+        </tr>
+        <tr>
+            <td>softWrap</td>
+            <td>Apakah teks harus berhenti pada jeda baris sesuai ukuran Widget yang menampung.</td>
+        </tr>
+        <tr>
+            <td>wrapWords</td>
+            <td>Apakah kata-kata yang tidak muat dalam satu baris harus dibungkus. Defaultnya adalah true.</td>
+        </tr>
+        <tr>
+            <td>overflow</td>
+            <td>Bagaimana overflow harus ditangani.</td>
+        </tr>
+        <tr>
+            <td>overflow</td>
+            <td>Untuk menangani overflow.</td>
+        </tr>
+        <tr>
+            <td>overflowReplacement</td>
+            <td>Jika teks meluap dan tidak sesuai dengan batasnya, widget ini akan ditampilkan.</td>
+        </tr>
+        <tr>
+            <td>textScaleFactor</td>
+            <td>Jumlah piksel font untuk setiap piksel. Juga memengaruhi minFontSize, maxFontSize, dan presetFontSizes.</td>
+        </tr>
+        <tr>
+            <td>maxLines</td>
+            <td>Jumlah maksimal baris yang di buat.</td>
+        </tr>
+        <tr>
+            <td>semanticsLabel</td>
+            <td>Membuat label semantic pada teks ini.</td>
+        </tr>
+    </tbody>
+</table>
