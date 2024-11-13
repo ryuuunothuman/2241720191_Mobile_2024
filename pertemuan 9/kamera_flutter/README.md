@@ -156,3 +156,5 @@ class DisplayPictureScreen extends StatelessWidget {
           }
 ```
 
+### **Hasilnya**
+![alt text](images/image-3.png)
