@@ -114,5 +114,5 @@ ElevatedButton(
 **Soal 3**\
 Jelaskan maksud kode langkah 5 tersebut terkait ``substring`` dan ``catchError``!
 >Jawab: 
-``substring`` digunakan untuk mengambil data dari index tertentu pada string. ``catchError`` digunakan untuk menangkap error yang terjadi pada kode.
+``substring`` digunakan untuk mengambil data dari index tertentu pada string. ``catchError`` digunakan untuk menangkap error yang terjadi pada kode.\
 ![alt text](GIF(1).gif)
