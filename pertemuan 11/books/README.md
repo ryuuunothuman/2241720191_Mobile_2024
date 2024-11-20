@@ -95,3 +95,24 @@ class _FuturePageState extends State<FuturePage> {
 **Soal 2**\
 Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut.
 ![alt text](image-2.png)
+
+#### **Langkah 5: Tambah kode di ElevatedButton**
+Menambahkan kode untuk memanggil method getData() pada ElevatedButton.
+```dart
+ElevatedButton(
+              onPressed: () {
+                setState(() {});
+                getData().then((value) {
+                  result = value.body.toString().substring(0, 450);
+                  setState(() {});
+                }).catchError((_) {
+                  result = 'An error occured';
+                  setState(() {});
+                });
+              },
+```
+**Soal 3**\
+Jelaskan maksud kode langkah 5 tersebut terkait ``substring`` dan ``catchError``!
+>Jawab: 
+``substring`` digunakan untuk mengambil data dari index tertentu pada string. ``catchError`` digunakan untuk menangkap error yang terjadi pada kode.
+![alt text](GIF(1).gif)

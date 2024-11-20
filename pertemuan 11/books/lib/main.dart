@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Cahyo', // Soal 1
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const FuturePage(),
     );
@@ -32,7 +32,7 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,18 +40,29 @@ class _FuturePageState extends State<FuturePage> {
         title: const Text('Back from the Future'),
       ),
       body: Center(
-        child: Column(children: [
-          const Spacer(),
-          ElevatedButton(
-            child: const Text('Go!'),
-            onPressed: () {}, 
+        child: Column(
+          children: [
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {});
+                getData().then((value) {
+                  result = value.body.toString().substring(0, 450);
+                  setState(() {});
+                }).catchError((_) {
+                  result = 'An error occured';
+                  setState(() {});
+                });
+              },
+              child: const Text('Go!'),
             ),
             const Spacer(),
             Text(result),
             const Spacer(),
             const CircularProgressIndicator(),
             const Spacer(),
-        ]),
+          ],
+        ),
       ),
     );
   }
@@ -64,4 +75,3 @@ class _FuturePageState extends State<FuturePage> {
     return http.get(url);
   }
 }
-
