@@ -1,8 +1,8 @@
 # **Praktikum 1: Mengunduh Data dari Web Service (API)**
 
 #### **Langkah 1: Buat Project Baru**
-![alt text](image.png)
-Kemudian Tambahkan dependensi ``http`` dengan mengetik perintah berikut di terminal.\
+![alt text](image.png)\
+Kemudian Tambahkan dependensi ``http`` dengan mengetik perintah berikut di terminal.
 ![alt text](image-1.png)
 
 #### **Langkah 2: Cek file ``pubspec.yaml``**
