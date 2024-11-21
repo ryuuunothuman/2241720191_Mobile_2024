@@ -227,3 +227,42 @@ Dan terakhir nilai ``42`` akan muncul sebagai hasil dari ``completer.future`` se
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 5"**.\
 Jawab:\
 ![alt text](GIF(3).gif)
+
+#### **Langkah 5: Ganti method ``calculate``**
+```dart
+ Future calculate() async {
+    // await Future.delayed(const Duration(seconds: 5));
+    // completer.complete(42);
+    try {
+      await new Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+    }
+    catch(_){
+      completer.completeError({});
+    }
+  }
+```
+
+#### **Langkah 6: Pindah ke ``onPressed``**
+```dart
+              onPressed: () {
+                // count();
+                getNumber().then((value){
+                  setState(() {
+                    result = value.toString();
+                  });
+                }).catchError((e) {
+                  result = 'An error occured';
+                });
+              },
+```
+
+**Soal 6**
+* Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!\
+Jawab:\
+Pada tombol ``onPressed``, perbedaan ini terlihat saat ``error handling``:\
+Langkah 2 tidak menangkap error, sedangkan Langkah 5-6 akan mengubah hasil menjadi pesan **"An error occured"** jika ada error.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 6"**.\
+Jawab:\
+![alt text](GIF(4).gif)
