@@ -180,3 +180,50 @@ Kode di atas melakukan tiga operasi asynchronous dengan jeda waktu 3 detik untuk
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 4"**.\
 Jawab:\
 ![alt text](GIF(2).gif)
+
+# **Praktikum 3: Menggunakan Completer di Future**
+
+#### **Langkah 1: Buka ``main.dart``**
+Pastikan telah impor package async berikut.
+```dart
+import 'dart:async';
+```
+
+#### **Langkah 2: Tambahkan variabel dan method**
+Tambahkan variabel late dan method di class ``_FuturePageState`` seperti ini.
+```dart
+late Completer completer;
+
+Future getNumber() {
+  completer = Completer<int>();
+  calculate();
+  return completer.future;
+}
+
+Future calculate() async {
+  await Future.delayed(const Duration(seconds : 5));
+  completer.complete(42);
+}
+```
+
+#### **Langkah 3: Ganti isi kode ``onPressed()``
+```dart
+onPressed: () {
+                // count();
+                getNumber().then((value){
+                  setState(() {
+                    result = value.toString();
+                  });
+                });
+              },
+```
+**Soal 5**
+* Jelaskan maksud kode langkah 2 tersebut!\
+Jawab:\
+``Completer`` digunakan untuk mengontrol penyelesaian dari sebuah ``Future`` secara manual. Fungsi ``getNumber`` membuat sebuah ``Completer`` dan memulai proses ``calculate``.
+``calculate`` menunggu selama 5 detik (``Future.delayed``) lalu menyelesaikan ``Completer`` dengan nilai ``42``.
+Dan terakhir nilai ``42`` akan muncul sebagai hasil dari ``completer.future`` setelah proses selesai.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 5"**.\
+Jawab:\
+![alt text](GIF(3).gif)
