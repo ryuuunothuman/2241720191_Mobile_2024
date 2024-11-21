@@ -186,7 +186,7 @@ Jawab:\
 #### **Langkah 1: Buka ``main.dart``**
 Pastikan telah impor package async berikut.
 ```dart
-import 'dart:async';
+import 'package:async/async.dart';
 ```
 
 #### **Langkah 2: Tambahkan variabel dan method**
@@ -266,3 +266,89 @@ Langkah 2 tidak menangkap error, sedangkan Langkah 5-6 akan mengubah hasil menja
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 6"**.\
 Jawab:\
 ![alt text](GIF(4).gif)
+
+# **Praktikum 4: Memanggil Future secara paralel**
+
+#### **Langkah 1: Buka file ``main.dart``**
+Tambahkan method ini ke dalam class ``_FuturePageState``
+```dart
+void returnFG() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List <int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+  }
+```
+
+#### **Langkah 2: Edit ``onPressed()``**
+```dart
+              onPressed: () {
+                // count();
+                // getNumber().then((value){
+                //   setState(() {
+                //     result = value.toString();
+                //   });
+                // }).catchError((e) {
+                //   result = 'An error occured';
+                // });
+                returnFG();
+              },
+```
+
+#### **Langkah 3: Run**
+**Soal 7**
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 7"**.\
+Jawab:\
+![alt text](GIF(5).gif)
+
+#### **Langkah 4: Ganti variabel ``futureGroup``**
+Anda dapat menggunakan FutureGroup dengan ``Future.wait`` seperti kode berikut.
+```dart
+ void returnFG() {
+    // FutureGroup<int> futureGroup = FutureGroup<int>();
+    // futureGroup.add(returnOneAsync());
+    // futureGroup.add(returnTwoAsync());
+    // futureGroup.add(returnThreeAsync());
+    // futureGroup.close();
+    // futureGroup.future.then((List <int> value) {
+    //   int total = 0;
+    //   for (var element in value) {
+    //     total += element;
+    //   }
+    //   setState(() {
+    //     result = total.toString();
+    //   });
+    // });
+    final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+    futures.then((List<int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+  }
+```
+
+**Soal 8**
+
+* Jelaskan maksud perbedaan kode langkah 1 dan 4!\
+Jawab:\
+Kode menjadi lebih ringkas dan mudah dipahami karena ``Future.wait`` menangani semua operasi paralel secara otomatis, tanpa langkah eksplisit seperti pada ``FutureGroup``.
