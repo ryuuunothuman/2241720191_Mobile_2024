@@ -116,3 +116,67 @@ Jelaskan maksud kode langkah 5 tersebut terkait ``substring`` dan ``catchError``
 >Jawab: 
 ``substring`` digunakan untuk mengambil data dari index tertentu pada string. ``catchError`` digunakan untuk menangkap error yang terjadi pada kode.\
 ![alt text](GIF(1).gif)
+
+# **Praktikum 2: Menggunakan await/async untuk menghindari callbacks**
+
+#### **Langkah 1: Buka file ``main.dart``**
+Tambahkan tiga method berisi kode seperti berikut di dalam class ``_FuturePageState``.
+```dart
+ Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+```
+
+#### **Langkah 2: Tambah method ``count``**
+Lalu tambahkan lagi method ini di bawah ketiga method sebelumnya.
+```dart
+  Future count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
+  }
+```
+
+#### **Langkah 3: Panggil ``count``**
+Lakukan comment kode sebelumnya, ubah isi kode onPressed() menjadi seperti berikut.
+```dart
+            ElevatedButton(
+              // onPressed: () {
+              //   // setState(() {});
+              //   // getData().then((value) {
+              //   //   result = value.body.toString().substring(0, 450);
+              //   //   setState(() {});
+              //   // }).catchError((_) {
+              //   //   result = 'An error occured';
+              //   //   setState(() {});
+              //   // });
+              // },
+              child: const Text('Go!'),
+              onPressed: () {
+                count();
+              },
+            ),
+```
+**Soal 4**
+* Jelaskan maksud kode langkah 1 dan 2 tersebut!\
+Jawab:\
+Kode di atas melakukan tiga operasi asynchronous dengan jeda waktu 3 detik untuk setiap fungsi (returnOneAsync, returnTwoAsync, returnThreeAsync). Fungsi count menghitung total hasil dari ketiga fungsi tersebut secara berurutan (serial). Setelah hasil total dihitung, nilai tersebut diperbarui ke dalam state result menggunakan setState, sehingga dapat ditampilkan di UI.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 4"**.\
+Jawab:\
+![alt text](GIF(2).gif)
