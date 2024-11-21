@@ -206,7 +206,7 @@ Future calculate() async {
 }
 ```
 
-#### **Langkah 3: Ganti isi kode ``onPressed()``
+#### **Langkah 3: Ganti isi kode ``onPressed()``**
 ```dart
 onPressed: () {
                 // count();
