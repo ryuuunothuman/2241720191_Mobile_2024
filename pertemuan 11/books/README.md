@@ -405,7 +405,7 @@ ElevatedButton(
 
 #### **Langkah 3: Run**
 Lakukan run dan klik tombol GO! maka akan menghasilkan seperti gambar berikut.\
-![alt text](image-3.png)
+![alt text](image-3.png)\
 Pada bagian debug console akan melihat teks Complete seperti berikut.\
 ![alt text](image-4.png)
 
