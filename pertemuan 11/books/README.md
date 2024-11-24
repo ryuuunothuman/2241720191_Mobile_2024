@@ -480,3 +480,149 @@ Pada Console\
 Perbedaannya\
 Pada ``handleError()`` fungsi ini menangani error dari ``returnError``, memperbarui ``result``, dan selalu mencetak "Complete".
 Pada ``returnError()`` fungsi async yang menunggu 2 detik lalu melemparkan error.
+
+# **Praktikum 6: Menggunakan Future dengan Statefulwidget**
+
+#### **Langkah 1: Install plugin geolocator**
+![alt text](image-6.png)
+
+#### **Langkah 2: Tambah permission GPS**
+```dart
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application
+        android:label="books"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>
+```
+
+#### **Langkah 3: Buat file ``geolocation.dart``**
+![alt text](image-7.png)
+
+#### **Langkah 4: Buat StatefulWidget**
+```dart
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
+
+  @override
+  State<LocationScreen> createState() => _LocationScreenState();
+}
+```
+
+#### **Langkah 5: Isi kode ``geolocation.dart``**
+```dart
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
+
+  @override
+  State<LocationScreen> createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  String myPosition = '';
+
+  @override
+  void initState() {
+    super.initState();
+    getPosition().then((Position myPos) {
+      myPosition =
+          'Latitude: ${myPos.latitude.toString()}, Longitude: ${myPos.longitude.toString()}';
+          setState(() {
+            myPosition = myPosition;
+          });
+      });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Current Location - Cahyo Adi Prasetia')),
+        body: Center(child: Text(myPosition)),
+      );
+    }
+    Future<Position> getPosition() async {
+      await Geolocator.requestPermission();
+      await Geolocator.isLocationServiceEnabled();
+      Position? position =
+        await Geolocator.getCurrentPosition();
+      return position;
+    }
+}
+```
+
+**Soal 11**
+
+* Tambahkan nama panggilan Anda pada tiap properti ``title`` sebagai identitas pekerjaan Anda.\
+Jawab:
+```dart
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Current Location - Cahyo Adi Prasetia')),
+        body: Center(child: Text(myPosition)),
+      );
+    }
+```
+
+#### **Langkah 6: Edit ``main.dart``**
+```dart
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Cahyo', // Soal 1
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const LocationScreen(),
+    );
+  }
+```
+
+#### **Langkah 7: Run**
+![alt text](image-8.png)
