@@ -413,3 +413,70 @@ Pada bagian debug console akan melihat teks Complete seperti berikut.\
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".\
 ![alt text](GIF(6).gif)
+
+#### **Langkah 4: Tambah method ``handleError``**
+Tambahkan kode ini di dalam class ``_FutureStatePage``
+```dart
+  Future handleError() async {
+    try {
+      await returnError();
+    }
+    catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    }
+    finally {
+      print('Complete');
+    }
+  }
+```
+
+**Soal 10**
+
+* Panggil method ``handleError()`` tersebut di ``ElevatedButton``, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+```dart
+            ElevatedButton(
+              // onPressed: () {
+              //   // setState(() {});
+              //   // getData().then((value) {
+              //   //   result = value.body.toString().substring(0, 450);
+              //   //   setState(() {});
+              //   // }).catchError((_) {
+              //   //   result = 'An error occured';
+              //   //   setState(() {});
+              //   // });
+              // },
+              child: const Text('Go!'),
+              onPressed: () {
+                // count();
+                // getNumber().then((value){
+                //   setState(() {
+                //     result = value.toString();
+                //   });
+                // }).catchError((e) {
+                //   result = 'An error occured';
+                // });
+                // returnFG();
+                // returnError()
+                // .then((value) {
+                //   setState(() {
+                //     result = 'Success';
+                //   });
+                // }).catchError((onError) {
+                //   setState(() {
+                //     result = onError.toString();
+                //   });
+                // }).whenComplete(() => print('Complete'));
+                handleError();
+              },
+            ),
+```
+Hasilnya\
+![alt text](GIF(7).gif)\
+Pada Console\
+![alt text](image-5.png)\
+
+Perbedaannya\
+Pada ``handleError()`` fungsi ini menangani error dari ``returnError``, memperbarui ``result``, dan selalu mencetak "Complete".
+Pada ``returnError()`` fungsi async yang menunggu 2 detik lalu melemparkan error.
