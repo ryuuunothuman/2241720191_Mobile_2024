@@ -352,3 +352,64 @@ Anda dapat menggunakan FutureGroup dengan ``Future.wait`` seperti kode berikut.
 * Jelaskan maksud perbedaan kode langkah 1 dan 4!\
 Jawab:\
 Kode menjadi lebih ringkas dan mudah dipahami karena ``Future.wait`` menangani semua operasi paralel secara otomatis, tanpa langkah eksplisit seperti pada ``FutureGroup``.
+
+# **Praktikum 5: Menangani Respon Error pada Async Code**
+
+#### **Langkah 1: Buka file ``main.dart``**
+Tambahkan method ini ke dalam class ``_FuturePageState``
+```dart
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened!');
+  }
+```
+
+#### **Langkah 2: ElevatedButton**
+Ganti dengan kode berikut
+```dart
+ElevatedButton(
+              // onPressed: () {
+              //   // setState(() {});
+              //   // getData().then((value) {
+              //   //   result = value.body.toString().substring(0, 450);
+              //   //   setState(() {});
+              //   // }).catchError((_) {
+              //   //   result = 'An error occured';
+              //   //   setState(() {});
+              //   // });
+              // },
+              child: const Text('Go!'),
+              onPressed: () {
+                // count();
+                // getNumber().then((value){
+                //   setState(() {
+                //     result = value.toString();
+                //   });
+                // }).catchError((e) {
+                //   result = 'An error occured';
+                // });
+                // returnFG();
+                returnError()
+                .then((value) {
+                  setState(() {
+                    result = 'Success';
+                  });
+                }).catchError((onError) {
+                  setState(() {
+                    result = onError.toString();
+                  });
+                }).whenComplete(() => print('Complete'));
+              },
+            ),
+```
+
+#### **Langkah 3: Run**
+Lakukan run dan klik tombol GO! maka akan menghasilkan seperti gambar berikut.\
+![alt text](image-3.png)
+Pada bagian debug console akan melihat teks Complete seperti berikut.\
+![alt text](image-4.png)
+
+**Soal 9**
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".\
+![alt text](GIF(6).gif)
