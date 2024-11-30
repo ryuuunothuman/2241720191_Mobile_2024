@@ -1,9 +1,9 @@
 # **Praktikum 1: Mengunduh Data dari Web Service (API)**
 
 #### **Langkah 1: Buat Project Baru**
-![alt text](image.png)\
+![alt text](assets/images/image.png)\
 Kemudian Tambahkan dependensi ``http`` dengan mengetik perintah berikut di terminal.
-![alt text](image-1.png)
+![alt text](assets/images/image-1.png)
 
 #### **Langkah 2: Cek file ``pubspec.yaml``**
 ```dart
@@ -94,7 +94,7 @@ class _FuturePageState extends State<FuturePage> {
 ```
 **Soal 2**\
 Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut.
-![alt text](image-2.png)
+![alt text](assets/images/image-2.png)
 
 #### **Langkah 5: Tambah kode di ElevatedButton**
 Menambahkan kode untuk memanggil method getData() pada ElevatedButton.
@@ -115,7 +115,7 @@ ElevatedButton(
 Jelaskan maksud kode langkah 5 tersebut terkait ``substring`` dan ``catchError``!
 >Jawab: 
 ``substring`` digunakan untuk mengambil data dari index tertentu pada string. ``catchError`` digunakan untuk menangkap error yang terjadi pada kode.\
-![alt text](GIF(1).gif)
+![alt text](assets/gif/GIF(1).gif)
 
 # **Praktikum 2: Menggunakan await/async untuk menghindari callbacks**
 
@@ -179,7 +179,7 @@ Kode di atas melakukan tiga operasi asynchronous dengan jeda waktu 3 detik untuk
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 4"**.\
 Jawab:\
-![alt text](GIF(2).gif)
+![alt text](assets/gif/GIF(2).gif)
 
 # **Praktikum 3: Menggunakan Completer di Future**
 
@@ -226,7 +226,7 @@ Dan terakhir nilai ``42`` akan muncul sebagai hasil dari ``completer.future`` se
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 5"**.\
 Jawab:\
-![alt text](GIF(3).gif)
+![alt text](assets/gif/GIF(3).gif)
 
 #### **Langkah 5: Ganti method ``calculate``**
 ```dart
@@ -265,7 +265,7 @@ Langkah 2 tidak menangkap error, sedangkan Langkah 5-6 akan mengubah hasil menja
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 6"**.\
 Jawab:\
-![alt text](GIF(4).gif)
+![alt text](assets/gif/GIF(4).gif)
 
 # **Praktikum 4: Memanggil Future secara paralel**
 
@@ -310,7 +310,7 @@ void returnFG() {
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 7"**.\
 Jawab:\
-![alt text](GIF(5).gif)
+![alt text](assets/gif/GIF(5).gif)
 
 #### **Langkah 4: Ganti variabel ``futureGroup``**
 Anda dapat menggunakan FutureGroup dengan ``Future.wait`` seperti kode berikut.
@@ -405,14 +405,14 @@ ElevatedButton(
 
 #### **Langkah 3: Run**
 Lakukan run dan klik tombol GO! maka akan menghasilkan seperti gambar berikut.\
-![alt text](image-3.png)\
+![alt text](assets/images/image-3.png)\
 Pada bagian debug console akan melihat teks Complete seperti berikut.\
-![alt text](image-4.png)
+![alt text](assets/images/image-4.png)
 
 **Soal 9**
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".\
-![alt text](GIF(6).gif)
+![alt text](assets/gif/GIF(6).gif)
 
 #### **Langkah 4: Tambah method ``handleError``**
 Tambahkan kode ini di dalam class ``_FutureStatePage``
@@ -473,9 +473,9 @@ Tambahkan kode ini di dalam class ``_FutureStatePage``
             ),
 ```
 Hasilnya\
-![alt text](GIF(7).gif)\
+![alt text](assets/gif/GIF(7).gif)\
 Pada Console\
-![alt text](image-5.png)\
+![alt text](assets/images/image-5.png)\
 
 Perbedaannya\
 Pada ``handleError()`` fungsi ini menangani error dari ``returnError``, memperbarui ``result``, dan selalu mencetak "Complete".
@@ -484,7 +484,7 @@ Pada ``returnError()`` fungsi async yang menunggu 2 detik lalu melemparkan error
 # **Praktikum 6: Menggunakan Future dengan Statefulwidget**
 
 #### **Langkah 1: Install plugin geolocator**
-![alt text](image-6.png)
+![alt text](assets/images/image-6.png)
 
 #### **Langkah 2: Tambah permission GPS**
 ```dart
@@ -538,7 +538,7 @@ Pada ``returnError()`` fungsi async yang menunggu 2 detik lalu melemparkan error
 ```
 
 #### **Langkah 3: Buat file ``geolocation.dart``**
-![alt text](image-7.png)
+![alt text](assets/images/image-7.png)
 
 #### **Langkah 4: Buat StatefulWidget**
 ```dart
@@ -625,4 +625,52 @@ Jawab:
 ```
 
 #### **Langkah 7: Run**
-![alt text](image-8.png)
+![alt text](assets/images/image-8.png)
+
+#### **Langkah 8: Tambahkan animasi loading**
+```dart
+    Widget build(BuildContext context) {
+      final myWidget =
+        myPosition == '' 
+        ? const CircularProgressIndicator()
+        : Text(myPosition);
+
+      return Scaffold(
+        appBar: AppBar(title: const Text('Current Location - Cahyo Adi Prasetia')),
+        body: Center(child: myWidget),
+      );
+    }
+```
+
+**Soal 12**
+
+* Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method ``getPosition()`` dengan kode ``await Future.delayed(const Duration(seconds: 3))``;\
+Jawab:\
+```dart
+  @override
+  void initState() {
+    super.initState();
+    getPosition().then((Position myPos) {
+      setState(() {
+        myPosition = '';
+      });
+      getPosition().then((Position position) async {
+        await Future.delayed(const Duration(seconds: 3));
+        myPosition =
+            'Latitude: ${position.latitude}, Longitude: ${position.longitude}';
+        setState(() {
+          myPosition = myPosition;
+        });
+        print(myPosition);
+      });
+    });
+  }
+```
+
+* Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?\
+Jawab:\
+![alt text](assets/images/image-9.png)\
+Ya saya mendapatkannya, Karena browser memiliki akses ke GPS sehingga dapat menampilkan koordinat.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan **"W11: Soal 12"**.
+![alt text](assets/gif/GIF(8).gif)
