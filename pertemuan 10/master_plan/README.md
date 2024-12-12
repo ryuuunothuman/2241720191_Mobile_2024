@@ -192,3 +192,23 @@ Tambahkan method initState() setelah deklarasi variabel scrollController seperti
 
 #### **Langkah 14: Hasil**
 ![alt text](GIF1.gif)
+
+# **Tugas Praktikum 1: Dasar State dengan Model-View**
+
+1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki.
+2. Jelaskan maksud dari langkah 4 pada praktikum tersebut! Mengapa dilakukan demikian?
+3. Mengapa perlu variabel plan di langkah 6 pada praktikum tersebut? Mengapa dibuat konstanta ?
+4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+5. Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ?
+
+
+**Jawaban**
+
+2. Karena langkah tersebut digunakan untuk membungkus beberapa data layer ke dalam sebuah file yang nanti akan mengekspor kedua model tersebut.
+
+3. Karena digunakan untuk menyimpan data yang akan digunakan dalam aplikasi. Variabel plan dibuat konstanta agar data yang disimpan tidak dapat diubah.
+
+4. Saya membuat widget _buildTaskTile untuk membuat tile task.
+![alt text](GIF2.gif)
+
+5. Pada langkah 11 digunakan untuk menambahkan listener pada scroll controller, sedangkan pada langkah 13 digunakan untuk membersihkan scroll controller.
