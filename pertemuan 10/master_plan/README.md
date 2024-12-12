@@ -208,7 +208,7 @@ Tambahkan method initState() setelah deklarasi variabel scrollController seperti
 
 3. Karena digunakan untuk menyimpan data yang akan digunakan dalam aplikasi. Variabel plan dibuat konstanta agar data yang disimpan tidak dapat diubah.
 
-4. Saya membuat widget _buildTaskTile untuk membuat tile task.
+4. Saya membuat widget _buildTaskTile untuk membuat tile task.\
 ![alt text](GIF2.gif)
 
 5. Pada langkah 11 digunakan untuk menambahkan listener pada scroll controller, sedangkan pada langkah 13 digunakan untuk membersihkan scroll controller.
